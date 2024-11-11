@@ -2,6 +2,7 @@ package builder
 
 import (
 	"github.com/goexl/exception/internal/core"
+	"github.com/goexl/exception/internal/kernel"
 	"github.com/goexl/exception/internal/param"
 	"github.com/goexl/gox"
 )
@@ -16,7 +17,7 @@ func NewException() *Exception {
 	}
 }
 
-func (e *Exception) Code(code int) (exception *Exception) {
+func (e *Exception) Code(code kernel.Code) (exception *Exception) {
 	e.params.Code = code
 	exception = e
 

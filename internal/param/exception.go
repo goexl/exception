@@ -2,10 +2,11 @@ package param
 
 import (
 	"github.com/goexl/exception/internal/internal"
+	"github.com/goexl/exception/internal/kernel"
 )
 
 type Exception struct {
-	Code    int             `json:"code,omitempty"`
+	Code    kernel.Code     `json:"code,omitempty"`
 	Message string          `json:"message,omitempty"`
 	Data    internal.Fields `json:"data,omitempty"`
 }
