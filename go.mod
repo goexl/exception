@@ -1,9 +1,11 @@
 module github.com/goexl/exception
 
-go 1.21
+go 1.23
+
+toolchain go1.24.1
 
 require (
-	github.com/goexl/gox v0.3.8
+	github.com/goexl/gox v1.9.2
 	github.com/stretchr/testify v1.9.0
 )
 
