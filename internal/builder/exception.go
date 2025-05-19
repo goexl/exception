@@ -31,8 +31,9 @@ func (e *Exception) Message(message string) (exception *Exception) {
 	return
 }
 
-func (e *Exception) Field(fields ...gox.Field[any]) (exception *Exception) {
-	for _, field := range fields {
+func (e *Exception) Field(required gox.Field[any], optionals ...gox.Field[any]) (exception *Exception) {
+	e.params.Data[required.Key()] = required.Value()
+	for _, field := range optionals {
 		e.params.Data[field.Key()] = field.Value()
 	}
 	exception = e
